@@ -26,6 +26,8 @@ USE_CAMERA_STUB := true
 # Platform
 TARGET_BOARD_PLATFORM := msm8916
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno306
+# Add suffix variable to uniquely identify the board
+TARGET_BOARD_SUFFIX := _32
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := g620s
@@ -106,6 +108,8 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
+BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
+BOARD_VOLD_MAX_PARTITIONS := 40
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
