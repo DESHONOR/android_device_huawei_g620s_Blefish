@@ -177,5 +177,11 @@ PRODUCT_PACKAGES += \
 	wpa_supplicant.conf \
 	wpa_supplicant_overlay.conf
 
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.dex2oat-filter=everything \
+	dalvik.vm.dex2oat-flags=--no-watch-dog \
+	dalvik.vm.image-dex2oat-filter=everything
+
 # Include proprietary
 $(call inherit-product, vendor/huawei/g620s/g620s-vendor.mk)
