@@ -95,6 +95,11 @@ PRODUCT_PACKAGES += \
 	libOmxCore \
 	libOmxVdec \
 	libOmxVenc \
+	libOmxAacEnc \
+	libOmxAmrEnc \
+	libOmxEvrcEnc \
+    	libOmxQcelp13Enc \
+	libOmxVdecHevc \
 	libstagefrighthw \
 	media_codecs.xml \
 
@@ -137,6 +142,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
 	liboeminfo_oem_api \
+	libbson \
 	libxml2
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -147,6 +153,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.no_wait_for_card=1 \
 	rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
 	rild.libargs=-d/dev/smd0
+
+# ART
+PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.dex2oat-filter=everything \
+	dalvik.vm.dex2oat-flags=--no-watch-dog \
+	dalvik.vm.image-dex2oat-filter=everything
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -168,6 +180,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
+	libqsap_sdk \
+	libQWiFiSoftApCfg \
+	libwpa_client \
 	hostapd \
 	WCNSS_cfg.dat \
 	WCNSS_qcom_cfg.ini \
@@ -182,6 +197,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.dex2oat-filter=everything \
 	dalvik.vm.dex2oat-flags=--no-watch-dog \
 	dalvik.vm.image-dex2oat-filter=everything
+
+# Ebtables
+PRODUCT_PACKAGES += \
+	ebtables \
+	ethertypes \
+	libebtc
 
 # Include proprietary
 $(call inherit-product, vendor/huawei/g620s/g620s-vendor.mk)
