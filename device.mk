@@ -154,12 +154,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
 	rild.libargs=-d/dev/smd0
 
-# ART
-PRODUCT_PROPERTY_OVERRIDES += \
-	dalvik.vm.dex2oat-filter=everything \
-	dalvik.vm.dex2oat-flags=--no-watch-dog \
-	dalvik.vm.image-dex2oat-filter=everything
-
 # Sensors
 PRODUCT_PACKAGES += \
 	calmodule.cfg \
